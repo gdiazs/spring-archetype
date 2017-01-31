@@ -1,0 +1,19 @@
+
+
+.control-group{
+	margin-top: 5px;
+}
+
+#login-form{
+	background-color: white;
+	padding: 10px;
+}
+
+#login-form button{
+	width: 100%;
+}
+
+#login-form legend {
+	background-color: white;
+	padding: 5px;
+}

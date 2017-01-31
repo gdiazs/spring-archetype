@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:fragment="content">
+
+		<form id="login-form" action="/users/login" th:action="${loginUrl}"
+			method="post">
+			<fieldset>
+				<legend th:text="#{users.login.login-form.legend}">Login</legend>
+
+				<div th:if="${param.error}"
+					th:text="#{users.login.login-form.error}"
+					class="alert alert-danger">
+					<strong>Error</strong> Indicates a warning that might need
+					attention.
+				</div>
+
+				<div class="control-group">
+					<label for="username" th:text="#{users.login.login-form.username}">Usuario</label>
+					<input class="form-control" type="text" id="username"
+						name="username" />
+				</div>
+				<div class="control-group">
+					<label for="password" th:text="#{users.login.login-form.password}">Contraseña</label>
+					<input class="form-control" type="password" id="password"
+						name="password" />
+				</div>
+				<input type="hidden" name="token" th:name="${_csrf.parameterName}"
+					value="sjkdfhasjkdfhajksdfh" th:value="${_csrf.token}" />
+				<div class="control-group">
+					<br />
+					<button type="submit" th:text="#{users.login.login-form.submit}"
+						class="btn btn-primary">Iniciar Sesión</button>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>

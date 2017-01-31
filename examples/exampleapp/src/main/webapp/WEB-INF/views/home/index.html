@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:fragment="content">
+	
+		<p class="lead" th:text="${name}"></p>
+		<div th:each="exampleapp : ${ exampleapps }">
+			<div th:text="${exampleapp.name}"></div>
+		</div>
+		<span th:text="#{home.index.message2}"></span>
+	</div>
+</body>
+</html>
